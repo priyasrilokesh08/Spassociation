@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP Association & SP Resort</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #d4af37;
+            color: #1a3a52;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            background-color: #f0c856;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background-color: #fff;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #1a3a52;
+            font-size: 2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 10px;
+        }
+
+        section h3 {
+            color: #2d5a7b;
+            font-size: 1.5em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        ul li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .partners {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+
+        .partner-item {
+            background-color: #f5f5f5;
+            padding: 15px 25px;
+            border-radius: 5px;
+            border-left: 4px solid #d4af37;
+            font-weight: 500;
+            color: #1a3a52;
+        }
+
+        .address {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border-left: 4px solid #1a3a52;
+        }
+
+        .address strong {
+            color: #1a3a52;
+        }
+
+        .property-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .property-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .property-item strong {
+            color: #1a3a52;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .amenities {
+            background-color: #fff8f0;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #d4af37;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+            color: #fff;
+            text-align: center;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .contact-section h2 {
+            color: #fff;
+            border-bottom-color: #d4af37;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact-item a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #f0c856;
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #1a3a52;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .property-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>SP ASSOCIATION</h1>
+        <p>All Types of Loan & Local Finance Available</p>
+        
+        <h2 style="font-size: 1.8em; margin: 20px 0 10px 0; font-weight: 300;">SP Association</h2>
+        <p style="font-size: 1em; margin-bottom: 20px;">Your trusted local finance partner. We specialize in providing all types of loans with quick processing. We also offer premium stay facilities at SP Resort in Yercaud.</p>
+        
+        <div class="button-group">
+            <a href="tel:+919976195932" class="btn">📞 Call Now</a>
+            <a href="https://wa.me/919976195932" class="btn">💬 Message Us</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Section 1: SP Association Finance -->
+        <section>
+            <h2>1. SP ASSOCIATION (Finance & Loans)</h2>
+            
+            <h3>Our Core Financial Services</h3>
+            <p><strong>All Types of Loans Available.</strong> We provide trusted, fast, and secure local financial assistance tailored to your requirements.</p>
+            
+            <ul>
+                <li>Local Finance & Fast Business Loans</li>
+                <li>Personal Loans & Emergency Capital Support</li>
+                <li>Home & Vehicle Loan Assistance</li>
+                <li>Simple Documentation & Quick Approval Processes</li>
+            </ul>
+
+            <h3>Our Banking Partners</h3>
+            <p>We work seamlessly with leading institutions to assist with your financial needs:</p>
+            <div class="partners">
+                <div class="partner-item">State Bank of India</div>
+                <div class="partner-item">HDFC Bank</div>
+                <div class="partner-item">Axis Bank</div>
+                <div class="partner-item">ICICI Bank</div>
+                <div class="partner-item">South Indian Bank</div>
+            </div>
+
+            <div class="address">
+                <strong>Office Address:</strong> 71/135-A, Annasalai Street, Chinnathirupathi, Salem - 636008
+            </div>
+        </section>
+
+        <!-- Section 2: SP Resort -->
+        <section>
+            <h2>2. SP RESORT (Yercaud Stay)</h2>
+            
+            <h3>Premium Private Villa Stay</h3>
+            <p>An independent house setup offering comfort and privacy in the cool hills of Yercaud.</p>
+
+            <h3>Property Layout</h3>
+            <div class="property-layout">
+                <div class="property-item">
+                    <strong>Ground Floor:</strong>
+                    2 Comfortable Bedrooms, a spacious Hall, and a fully functional Kitchen.
+                </div>
+                <div class="property-item">
+                    <strong>1st Floor:</strong>
+                    1 Private Bedroom alongside a dedicated Executive Meeting Hall.
+                </div>
+            </div>
+
+            <div class="amenities">
+                <strong>Amenities:</strong> Beautiful private garden compound and secure inside car parking space.
+            </div>
+
+            <h3>Customized Food Services</h3>
+            <ul>
+                <li>Delicious home-cooked food prepared strictly according to your personal preferences and orders.</li>
+            </ul>
+
+            <h3>Perfect Stay For:</h3>
+            <ul>
+                <li>Families, Friends, Bachelors, and Corporate/Business Staff.</li>
+            </ul>
+
+            <div class="address">
+                <strong>Resort Location:</strong> On the way to Pakoda Point, Bedford Road, Yercaud - 636001
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2>Contact Us Instantly</h2>
+            <p style="margin-bottom: 20px;">Get in touch for financial applications or resort bookings:</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>Mobile: <a href="tel:+919976195932">+91 99761 95932</a></span>
+                </div>
+                <div class="contact-item">
+                    <span>☎️</span>
+                    <span>Resort Landline: <a href="tel:04281225673">04281 - 225673</a></span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 SP Association & SP Resort. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
